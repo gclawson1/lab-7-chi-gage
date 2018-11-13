@@ -25,7 +25,13 @@ We are asking: Is there a significant difference in reccomended gun control acti
 
 Excellent question!! I am very interested in the results. 
 
+Gage: data wrangling and counts
+
 ```{r}
 
+get_guns <- gc_df %>%
+  filter(make_get_guns != "NA", gender != "NA") %>%
+  count(gender, make_get_guns)
+  
 ```
 
