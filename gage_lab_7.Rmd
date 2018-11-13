@@ -31,7 +31,12 @@ Gage: data wrangling and counts
 
 get_guns <- gc_df %>%
   filter(make_get_guns != "NA", gender != "NA") %>%
-  count(gender, make_get_guns)
+  count(gender, make_get_guns) %>%
+  spread(make_get_guns, n) %>%
+  select(-gender) 
+
+rownames(get_guns) <- c("Female", "Male")
+  
   
 ```
 
